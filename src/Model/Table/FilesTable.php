@@ -5,7 +5,7 @@ namespace App\Model\Table;
 use Cake\ORM\Table;
 
 
-class ArticlesTable extends Table {
+class FilesTable extends Table {
 
 //	var $hasMany = 'Comments';
     public function initialize(array $config)

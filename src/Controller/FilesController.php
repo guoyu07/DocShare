@@ -1,19 +1,24 @@
 <?php
 
-// src/Controller/filesController.php
+// src/Controller/FilesController.php
 
 namespace App\Controller;
 use App\Controller\AppController;
+use App\Controller\Component;
 
 use Cake\ORM\TableRegistry;
 use Cake\I18n\Time;
 use Cake\Event\Event;
+use Cake\Utility\Text;
+use Cake\network\Exception\InternalErrorException;
+
+
 
 
 
 class FilesController extends AppController
 {
-	var $uses = array('file', 'Comment'); 
+	var $uses = array('File', 'Comment'); 
 
 	public function beforeFilter(Event $event)
     {
@@ -21,6 +26,10 @@ class FilesController extends AppController
         $this->Auth->allow('all');
     }
  
+	public function initialize(){
+		parent::initialize();
+		$this->loadComponent('Upload');
+	}
 	
 	
 	public function isAuthorized($user)
@@ -35,7 +44,7 @@ class FilesController extends AppController
 		// The owner of an file can edit and delete it
 		if (in_array($this->request->action, ['edit', 'delete'])) {
 			$fileId = (int)$this->request->params['pass'][0];
-			if ($this->files->isOwnedBy($fileId, $user['id'])) {
+			if ($this->Files->isOwnedBy($fileId, $user['id'])) {
 				return true;
 			}
 		}
@@ -59,12 +68,12 @@ class FilesController extends AppController
     }
     public function index()
     {
-//        $files = $this->files->find('all');
-//        $this->set(compact('files'));
-//		 $files=TableRegistry::get('files');
+//        $articles = $this->Articles->find('all');
+//        $this->set(compact('articles'));
+//		 $articles=TableRegistry::get('Articles');
 
-        $files = $this->files->find('all')->contain(['Comments']);
-        $this->set(compact('files'));
+        $files = $this->Files->find('all')->contain(['Comments']);
+        $this->set(compact('$files'));
 
     }
     
@@ -72,9 +81,9 @@ class FilesController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
 
-        $file = $this->files->get($id);
-        if ($this->files->delete($file)) {
-            $this->Flash->success(__('The file with id: {0} has been deleted.', h($id)));
+        $file = $this->Files->get($id);
+        if ($this->$files->delete($file)) {
+            $this->Flash->success(__('The File with id: {0} has been deleted.', h($id)));
             return $this->redirect($this->referer());
         }
     }
@@ -83,10 +92,10 @@ class FilesController extends AppController
     {
         $this->request->allowMethod(['post', 'draft']);
 
-        $file = $this->files->get($id);
+        $file = $this->Articles->get($id);
         $file['publish'] = "False";
-        if ($this->files->save($file)) {
-            $this->Flash->success(__('The file with id: {0} has been updated.', h($id)));
+        if ($this->Files->save($file)) {
+            $this->Flash->success(__('The File with id: {0} has been updated.', h($id)));
             return $this->redirect($this->referer());
         }
     }
@@ -95,56 +104,43 @@ class FilesController extends AppController
     {
         $this->request->allowMethod(['post', 'publish']);
 
-        $file = $this->files->get($id);
+        $file = $this->Articles->get($id);
         $file['publish'] = "True";
-        if ($this->files->save($file)) {
-            $this->Flash->success(__('The file with id: {0} has been updated.', h($id)));
+        if ($this->Files->save($file)) {
+            $this->Flash->success(__('The Article with id: {0} has been updated.', h($id)));
             return $this->redirect($this->referer());
         }
     }
     
     public function block($id)
     {
-//        $this->request->allowMethod(['post', 'block']);
-		$filesTable = TableRegistry::get('files');
+		$filesTable = TableRegistry::get('Files');
 
-        $file = $filesTable->get($id);
+        $file = $articlesTable->get($id);
         $file['commentsAllowed'] = false;
         if ($filesTable->save($file)) {
-            $this->Flash->success(__('The file with id: {0} has been updated.', h($id)));
+            $this->Flash->success(__('The Article with id: {0} has been updated.', h($id)));
             return $this->redirect($this->referer());
         }
     }
     
      public function allow($id)
     {
-        $filesTable = TableRegistry::get('files');
+        $filesTable = TableRegistry::get('Articles');
 
         $file = $filesTable->get($id);
         $file['commentsAllowed'] = true;
         if ($filesTable->save($file)) {
-            $this->Flash->success(__('The file with id: {0} has been updated.', h($id)));
-            return $this->redirect($this->redirect($this->referer()));
+            $this->Flash->success(__('The Article with id: {0} has been updated.', h($id)));
+            return $this->redirect($this->referer());
         }
     }
-    public function login()
-    {
-        if ($this->request->is('post')) {
-            $login = $this->request->data;
-//            print_r($login);
-            if($login['username'] == 'admin' && $login['password'] == 'conestoga'){
-                    $this->Flash->success(__('Successfully Logged In.'));
-                    return $this->redirect($this->referer());
-                }
-            
-            $this->Flash->error(__('Please Enter Right Credentials.'));
-        }
-    }
+   
     
     
     public function view($id)
     {
-		$filesTable = TableRegistry::get('files');
+		$filesTable = TableRegistry::get('Files');
 		$files = $filesTable->find('all', array('conditions' => array('id' => $id)))->contain([
 			'Comments' => function ($q) {
 							   return $q
@@ -156,12 +152,12 @@ class FilesController extends AppController
     }
 	
 	public function increasecomment($id){
-		$filesTable = TableRegistry::get('files');
-		$file = $filesTable->get($id); // Return file with id 12
+		$filesTable = TableRegistry::get('Files');
+		$file = $filesTable->get($id); // Return article with id 12
 
 		$file->commentCount += 1;
 		$filesTable->save($file);
-		return $this->redirect('/files/view/'.$id);
+		return $this->redirect($this->referer());
 
 	}
 	
@@ -172,87 +168,64 @@ class FilesController extends AppController
 	}
 
     public function edit($id){
-			$tagsTable = TableRegistry::get('Tags');
-			$tags = $tagsTable->find('all');
-			$this->set(compact('tags'));
-
 		
-			$filesTable = TableRegistry::get('files');
+		
+			$filesTable = TableRegistry::get('Files');
             $file = $filesTable->get($id, ['contain' => 'Tags']);
-
-			$tempfile = $this->request->data;
+			$file->title = urldecode($file->title);
             if ($this->request->is(['post', 'put'])) {
-                $this->files->patchEntity($file, $this->request->data,[
-				'associated' => [
-					'Tags'
-				]
+                $this->Files->patchEntity($file, $this->request->data);
 				
-				]);
-				
-						if($this->files->save($file)){
+						if($this->Files->save($file)){
 							 $this->Flash->success(__('Your tag pair has been saved.'));
 						}
-						$this->Flash->error(__('Unable to create relation of file and tag.'));
+						$this->Flash->error(__('Unable to create relation of article and tag.'));
 					}
 
 
             $this->set('file', $file);
         }
 
-    public function add()
-    {
-
-		$now = Time::now();
-
-		$tagsTable = TableRegistry::get('Tags');
-		$filestagsTable = TableRegistry::get('filesTags');
-		$filesTable = TableRegistry::get('files');
-		$count = $filesTable->find('all');
-		$newfileId = $count->last()->id +1;
-        $query = $this->files->Tags->find('list', [
-				'keyField' => 'id',
-				'valueField' => 'value'
-			]);
-			$tags = $query->toArray();
-			$this->set(compact('tags'));
-
+	public function add(){
 		
-		
-        $file = $this->files->newEntity();
+			$now = Time::now();
+			$file = $this->Files->newEntity();
         if ($this->request->is('post')) {
-            $tempfile = $this->request->data;
-            $file = $this->files->patchEntity($file, $this->request->data);
+            $tempFile = $this->request->data;
+            $file = $this->Files->patchEntity($file, $this->request->data);
+			
 			$file->user_id = $this->Auth->user('id');
 			$file->date = $now;
-			$tuple = $filestagsTable->newEntity();
-			$flag = $filestagsTable->findAllByfileId($newfileId);
-			$flagCount = $flag->count();
-			if($flagCount>0)
-			{
-//				print("flag found");
-			}else{
-//								print("flag not found");
+			$file->uniqueID = Text::uuid();
+			$file->title = urlencode($file["upfile"]["name"]);
+			if(!empty($file["upfile"])){
+				$filename = $file["upfile"]['name'];
+				$file_tmp_name = $file["upfile"]['tmp_name'];
+				$dir = WWW_ROOT.'uploads';
+				$allowed = array('png', 'jpg', 'jpeg');
 
-				foreach($tempfile['Tags'] as $tag):
-						
-						$tuple->file_id= $newfileId;
-						$tuple->tag_id= $tag;					
-						if($filestagsTable->save($tuple)){
-							 $this->Flash->success(__('Your tag pair has been saved.'));
-						}
-						$this->Flash->error(__('Unable to create relation of file and tag.'));
-				endforeach;
-				
-				if ($this->files->save($file)) {
+				if(!in_array(substr(strrchr($filename , '.'), 1), $allowed)){
+					throw new InternalErrorException("Error processing request.", 1);
+				}elseif( is_uploaded_file($file_tmp_name)){
+					move_uploaded_file($file_tmp_name, $dir.DS.$file->uniqueID.'-'.$filename);
+					}
+			}
+			
+			if ($this->Files->save($file)) {
 					$this->Flash->success(__('Your file has been saved.'));
 					return $this->redirect($this->referer());
 				}
-				$this->Flash->error(__('Unable to add your file.'));
-			}
+			$this->Flash->error(__('Unable to add your file.'));
 			
-            
-        }
-        $this->set('file', $file);
-    }
+
+		}
+
+			
+			
+            $this->set('file', $file);
+      }
+
+	
+	
 }
 ?>

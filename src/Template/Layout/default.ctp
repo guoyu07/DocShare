@@ -38,7 +38,7 @@ $cakeDescription = 'TechMuzz';
 	
     <section class="container clearfix">
 		<header>
-		<?= "<h1>".$this->Html->link('TechMuzz', ['controller' => 'articles', 'action' => 'all'])."</h1>" ?>
+		<?= "<h1>".$this->Html->link('TechMuzz', ['controller' => 'files', 'action' => 'all'])."</h1>" ?>
 	</header>
         <?= $this->fetch('content') ?>
     </section>
