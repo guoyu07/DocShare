@@ -153,18 +153,18 @@ class FilesController extends AppController
 	
 	public function increasecomment($id){
 		$filesTable = TableRegistry::get('Files');
-		$file = $filesTable->get($id); // Return article with id 12
-
+		$file = $filesTable->get($id);
 		$file->commentCount += 1;
 		$filesTable->save($file);
 		return $this->redirect($this->referer());
 
 	}
 	
-	public function comments($id){
-		$commentsTable = TableRegistry::get('Comments');
-		$comments = $commentsTable->find('all', array('conditions' => array('file_id' => $id)));
-        $this->set(compact('comments'));
+	public function comments($id){		
+		$filesTable = TableRegistry::get('Files');
+        $file = $filesTable->get($id, ['contain' => 'Comments']);
+		        $this->set(compact('file'));
+
 	}
 
     public function edit($id){

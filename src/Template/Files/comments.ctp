@@ -50,7 +50,7 @@
 
             <!-- Here is where we iterate through our $articles query object, printing out article info -->
 
-            <?php foreach ($comments as $comment): ?>
+            <?php foreach ($file["comments"] as $comment): ?>
             <tr>
                 <td>
                     <?= $this->Html->link($comment->content, ['action' => 'view', $comment->id]) ?>       
