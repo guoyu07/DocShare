@@ -12,7 +12,7 @@ class UsersTable extends Table
     {
         $this->addBehavior('Timestamp');
 
- 		$this->hasMany('Articles', [
+ 		$this->hasMany('Files', [
             'foreignKey' => 'user_id',
             'dependent' => true,
         ]);    

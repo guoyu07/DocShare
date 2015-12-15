@@ -57,32 +57,26 @@ class FilesController extends AppController
 	
     public function all()
     {
-        $files = $this->Files->find('all')->contain([
-			'Comments' => function ($q) {
-							   return $q
-									->select()
-									->where(['Comments.approved' => true]);
-							}
-				]);
+		$files = $this->Files->find('all', array('conditions' => array('publish' => true)))->contain([
+				'Comments' => function ($q) {
+								   return $q
+										->where(['Comments.approved' => true]);
+								}
+					]);
         $this->set(compact('files'));
     }
+	
     public function index()
     {
-//        $articles = $this->Articles->find('all');
-//        $this->set(compact('articles'));
-//		 $articles=TableRegistry::get('Articles');
-
-        $files = $this->Files->find('all')->contain(['Comments']);
-        $this->set(compact('$files'));
+        $files = $this->Files->find('all');
+        $this->set(compact('files'));
 
     }
     
     public function delete($id)
     {
-        $this->request->allowMethod(['post', 'delete']);
-
         $file = $this->Files->get($id);
-        if ($this->$files->delete($file)) {
+        if ($this->Files->delete($file)) {
             $this->Flash->success(__('The File with id: {0} has been deleted.', h($id)));
             return $this->redirect($this->referer());
         }
@@ -90,10 +84,8 @@ class FilesController extends AppController
     
     public function draft($id)
     {
-        $this->request->allowMethod(['post', 'draft']);
-
-        $file = $this->Articles->get($id);
-        $file['publish'] = "False";
+        $file = $this->Files->get($id);
+        $file['publish'] = false;
         if ($this->Files->save($file)) {
             $this->Flash->success(__('The File with id: {0} has been updated.', h($id)));
             return $this->redirect($this->referer());
@@ -102,36 +94,32 @@ class FilesController extends AppController
     
      public function publish($id)
     {
-        $this->request->allowMethod(['post', 'publish']);
 
-        $file = $this->Articles->get($id);
-        $file['publish'] = "True";
+        $file = $this->Files->get($id);
+        $file['publish'] = true;
         if ($this->Files->save($file)) {
-            $this->Flash->success(__('The Article with id: {0} has been updated.', h($id)));
+            $this->Flash->success(__('The File with id: {0} has been updated.', h($id)));
             return $this->redirect($this->referer());
         }
     }
     
     public function block($id)
     {
-		$filesTable = TableRegistry::get('Files');
-
-        $file = $articlesTable->get($id);
+        $file = $this->Files->get($id);
         $file['commentsAllowed'] = false;
-        if ($filesTable->save($file)) {
-            $this->Flash->success(__('The Article with id: {0} has been updated.', h($id)));
+        if ($this->Files->save($file)) {
+            $this->Flash->success(__('The File with id: {0} has been updated.', h($id)));
             return $this->redirect($this->referer());
         }
     }
     
      public function allow($id)
     {
-        $filesTable = TableRegistry::get('Articles');
 
-        $file = $filesTable->get($id);
+        $file = $this->Files->get($id);
         $file['commentsAllowed'] = true;
-        if ($filesTable->save($file)) {
-            $this->Flash->success(__('The Article with id: {0} has been updated.', h($id)));
+        if ($this->Files->save($file)) {
+            $this->Flash->success(__('The File with id: {0} has been updated.', h($id)));
             return $this->redirect($this->referer());
         }
     }

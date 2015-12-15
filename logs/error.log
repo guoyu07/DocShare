@@ -2962,3 +2962,545 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
+2015-12-13 01:32:46 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/MAMP/htdocs/docshare/src/Template/Files/index.ctp, line 55]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 140
+include - APP/Template/Files/index.ctp, line 55
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 971
+Cake\View\View::_render() - CORE/src/View/View.php, line 931
+Cake\View\View::render() - CORE/src/View/View.php, line 579
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 611
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-12-13 01:33:51 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/MAMP/htdocs/docshare/src/Template/Files/index.ctp, line 55]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 140
+include - APP/Template/Files/index.ctp, line 55
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 971
+Cake\View\View::_render() - CORE/src/View/View.php, line 931
+Cake\View\View::render() - CORE/src/View/View.php, line 579
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 611
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-12-13 01:34:06 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/MAMP/htdocs/docshare/src/Template/Files/view.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 140
+include - APP/Template/Files/view.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 971
+Cake\View\View::_render() - CORE/src/View/View.php, line 931
+Cake\View\View::render() - CORE/src/View/View.php, line 579
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 611
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-12-13 01:34:11 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/MAMP/htdocs/docshare/src/Template/Files/view.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 140
+include - APP/Template/Files/view.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 971
+Cake\View\View::_render() - CORE/src/View/View.php, line 931
+Cake\View\View::render() - CORE/src/View/View.php, line 579
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 611
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-12-13 01:34:19 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/MAMP/htdocs/docshare/src/Template/Files/view.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 140
+include - APP/Template/Files/view.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 971
+Cake\View\View::_render() - CORE/src/View/View.php, line 931
+Cake\View\View::render() - CORE/src/View/View.php, line 579
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 611
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-12-13 01:34:43 Error: [InvalidArgumentException] Cannot convert value to bool
+Request URL: /docshare/files/draft/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/TypeConverterTrait.php(37): Cake\Database\Type\BoolType->toDatabase('False', Object(Cake\Database\Driver\Mysql))
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Statement/PDOStatement.php(70): Cake\Database\Statement\StatementDecorator->cast('False', 'boolean')
+#2 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(105): Cake\Database\Statement\PDOStatement->bindValue('c0', 'False', 'boolean')
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(97): Cake\Database\Statement\StatementDecorator->bindValue('c0', 'False', 'boolean')
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(290): Cake\Database\Log\LoggingStatement->bindValue('c0', 'False', 'boolean')
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/ValueBinder.php(125): Cake\Database\Statement\StatementDecorator->bind(Array, Array)
+#6 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Connection.php(269): Cake\Database\ValueBinder->attachTo(Object(Cake\Database\Log\LoggingStatement))
+#7 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1597): Cake\Database\Query->execute()
+#9 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1448): Cake\ORM\Table->_update(Object(Cake\ORM\Entity), Array)
+#10 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1377): Cake\ORM\Table->_processSave(Object(Cake\ORM\Entity), Object(ArrayObject))
+#11 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Connection.php(557): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1378): Cake\Database\Connection->transactional(Object(Closure))
+#13 /Applications/MAMP/htdocs/docshare/src/Controller/FilesController.php(93): Cake\ORM\Table->save(Object(Cake\ORM\Entity))
+#14 [internal function]: App\Controller\FilesController->draft('1')
+#15 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#16 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#17 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\FilesController))
+#18 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#19 {main}
+
+
+2015-12-13 01:35:05 Error: [InvalidArgumentException] Cannot convert value to bool
+Request URL: /docshare/files/draft/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/TypeConverterTrait.php(37): Cake\Database\Type\BoolType->toDatabase('False', Object(Cake\Database\Driver\Mysql))
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Statement/PDOStatement.php(70): Cake\Database\Statement\StatementDecorator->cast('False', 'boolean')
+#2 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(105): Cake\Database\Statement\PDOStatement->bindValue('c0', 'False', 'boolean')
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(97): Cake\Database\Statement\StatementDecorator->bindValue('c0', 'False', 'boolean')
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(290): Cake\Database\Log\LoggingStatement->bindValue('c0', 'False', 'boolean')
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/ValueBinder.php(125): Cake\Database\Statement\StatementDecorator->bind(Array, Array)
+#6 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Connection.php(269): Cake\Database\ValueBinder->attachTo(Object(Cake\Database\Log\LoggingStatement))
+#7 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1597): Cake\Database\Query->execute()
+#9 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1448): Cake\ORM\Table->_update(Object(Cake\ORM\Entity), Array)
+#10 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1377): Cake\ORM\Table->_processSave(Object(Cake\ORM\Entity), Object(ArrayObject))
+#11 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Connection.php(557): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1378): Cake\Database\Connection->transactional(Object(Closure))
+#13 /Applications/MAMP/htdocs/docshare/src/Controller/FilesController.php(93): Cake\ORM\Table->save(Object(Cake\ORM\Entity))
+#14 [internal function]: App\Controller\FilesController->draft('1')
+#15 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#16 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#17 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\FilesController))
+#18 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#19 {main}
+
+
+2015-12-13 01:35:10 Error: [InvalidArgumentException] Cannot convert value to bool
+Request URL: /docshare/files/publish/10
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/TypeConverterTrait.php(37): Cake\Database\Type\BoolType->toDatabase('True', Object(Cake\Database\Driver\Mysql))
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Statement/PDOStatement.php(70): Cake\Database\Statement\StatementDecorator->cast('True', 'boolean')
+#2 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(105): Cake\Database\Statement\PDOStatement->bindValue('c0', 'True', 'boolean')
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(97): Cake\Database\Statement\StatementDecorator->bindValue('c0', 'True', 'boolean')
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(290): Cake\Database\Log\LoggingStatement->bindValue('c0', 'True', 'boolean')
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/ValueBinder.php(125): Cake\Database\Statement\StatementDecorator->bind(Array, Array)
+#6 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Connection.php(269): Cake\Database\ValueBinder->attachTo(Object(Cake\Database\Log\LoggingStatement))
+#7 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1597): Cake\Database\Query->execute()
+#9 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1448): Cake\ORM\Table->_update(Object(Cake\ORM\Entity), Array)
+#10 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1377): Cake\ORM\Table->_processSave(Object(Cake\ORM\Entity), Object(ArrayObject))
+#11 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Connection.php(557): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1378): Cake\Database\Connection->transactional(Object(Closure))
+#13 /Applications/MAMP/htdocs/docshare/src/Controller/FilesController.php(105): Cake\ORM\Table->save(Object(Cake\ORM\Entity))
+#14 [internal function]: App\Controller\FilesController->publish('10')
+#15 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#16 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#17 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\FilesController))
+#18 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#19 {main}
+
+
+2015-12-13 01:35:56 Error: [InvalidArgumentException] Cannot convert value to bool
+Request URL: /docshare/files/draft/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/TypeConverterTrait.php(37): Cake\Database\Type\BoolType->toDatabase('False', Object(Cake\Database\Driver\Mysql))
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Statement/PDOStatement.php(70): Cake\Database\Statement\StatementDecorator->cast('False', 'boolean')
+#2 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(105): Cake\Database\Statement\PDOStatement->bindValue('c0', 'False', 'boolean')
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(97): Cake\Database\Statement\StatementDecorator->bindValue('c0', 'False', 'boolean')
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(290): Cake\Database\Log\LoggingStatement->bindValue('c0', 'False', 'boolean')
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/ValueBinder.php(125): Cake\Database\Statement\StatementDecorator->bind(Array, Array)
+#6 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Connection.php(269): Cake\Database\ValueBinder->attachTo(Object(Cake\Database\Log\LoggingStatement))
+#7 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1597): Cake\Database\Query->execute()
+#9 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1448): Cake\ORM\Table->_update(Object(Cake\ORM\Entity), Array)
+#10 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1377): Cake\ORM\Table->_processSave(Object(Cake\ORM\Entity), Object(ArrayObject))
+#11 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Connection.php(557): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1378): Cake\Database\Connection->transactional(Object(Closure))
+#13 /Applications/MAMP/htdocs/docshare/src/Controller/FilesController.php(93): Cake\ORM\Table->save(Object(Cake\ORM\Entity))
+#14 [internal function]: App\Controller\FilesController->draft('1')
+#15 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#16 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#17 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\FilesController))
+#18 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#19 {main}
+
+
+2015-12-13 01:37:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class F could not be found.
+Exception Attributes: array (
+  'class' => 'F',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /docshare/f
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-13 01:42:32 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/Applications/MAMP/htdocs/docshare/src/Controller/FilesController.php, line 60]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-13 01:42:32 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /docshare/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Applications/M...', 60)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-13 01:43:54 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/Applications/MAMP/htdocs/docshare/src/Controller/FilesController.php, line 61]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-13 01:43:54 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /docshare/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Applications/M...', 61)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-13 01:45:33 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/MAMP/htdocs/docshare/src/Template/Files/view.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 140
+include - APP/Template/Files/view.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 971
+Cake\View\View::_render() - CORE/src/View/View.php, line 931
+Cake\View\View::render() - CORE/src/View/View.php, line 579
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 611
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-12-13 01:45:52 Error: Fatal Error (1): Call to a member function delete() on boolean in [/Applications/MAMP/htdocs/docshare/src/Controller/FilesController.php, line 81]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-13 01:45:52 Error: [Cake\Error\FatalErrorException] Call to a member function delete() on boolean
+Request URL: /docshare/files/delete/13
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Applications/M...', 81)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-13 01:46:08 Error: Fatal Error (1): Call to a member function save() on null in [/Applications/MAMP/htdocs/docshare/src/Controller/FilesController.php, line 112]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-13 01:46:08 Error: [Cake\Error\FatalErrorException] Call to a member function save() on null
+Request URL: /docshare/files/block/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Applications/M...', 112)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-13 01:48:02 Error: Fatal Error (1): Call to a member function delete() on boolean in [/Applications/MAMP/htdocs/docshare/src/Controller/FilesController.php, line 79]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-13 01:48:02 Error: [Cake\Error\FatalErrorException] Call to a member function delete() on boolean
+Request URL: /docshare/files/delete/14
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Applications/M...', 79)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-13 01:58:44 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "panels"
+Request URL: /docshare/debug_kit/panels/view/9466dbf1-29c7-4852-b6c8-64bcefe3e7e7
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/debug_kit/src/Controller/PanelsController.php(89): Cake\ORM\Table->get('9466dbf1-29c7-4...')
+#2 [internal function]: DebugKit\Controller\PanelsController->view('9466dbf1-29c7-4...')
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(DebugKit\Controller\PanelsController))
+#6 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-12-15 19:25:35 Error: [Cake\View\Exception\MissingHelperException] Helper class paramsHelper could not be found.
+Exception Attributes: array (
+  'class' => 'paramsHelper',
+  'plugin' => NULL,
+)
+Request URL: /docshare/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('params', NULL)
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/View/HelperRegistry.php(66): Cake\Core\ObjectRegistry->load('params')
+#2 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/View/View.php(867): Cake\View\HelperRegistry->__isset('params')
+#3 /Applications/MAMP/htdocs/docshare/src/Template/Layout/default.ctp(38): Cake\View\View->__get('params')
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/View/View.php(971): include('/Applications/M...')
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/View/View.php(931): Cake\View\View->_evaluate('/Applications/M...', Array)
+#6 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/View/View.php(625): Cake\View\View->_render('/Applications/M...')
+#7 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/View/View.php(584): Cake\View\View->renderLayout('', 'default')
+#8 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#9 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#10 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\FilesController))
+#11 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-12-15 20:04:55 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'docshare.articles' doesn't exist
+Request URL: /docshare/users/posts
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'articles', Array, Object(Cake\Database\Schema\Table))
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(64): Cake\Database\Schema\Collection->describe('articles', Array)
+#2 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(423): Cake\Database\Schema\CachedCollection->describe('articles')
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(499): Cake\ORM\Table->schema()
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(334): Cake\ORM\Table->primaryKey()
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(311): Cake\ORM\Query->_addAssociationsToTypeMap(Object(App\Model\Table\UsersTable), Object(Cake\Database\TypeMap), Array)
+#6 /Applications/MAMP/htdocs/docshare/src/Controller/UsersController.php(27): Cake\ORM\Query->contain(Array)
+#7 [internal function]: App\Controller\UsersController->posts()
+#8 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#9 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#10 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#11 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-12-15 20:05:02 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Articles could not be found.
+Exception Attributes: array (
+  'class' => 'Articles',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /docshare/articles/add
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-15 20:13:57 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'docshare.articles_tags' doesn't exist
+Request URL: /docshare/tags/view/3
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'articles_tags', Array, Object(Cake\Database\Schema\Table))
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(64): Cake\Database\Schema\Collection->describe('articles_tags', Array)
+#2 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(423): Cake\Database\Schema\CachedCollection->describe('articles_tags')
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(173): Cake\ORM\Table->schema()
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(131): Cake\ORM\Query->addDefaultTypes(Object(Cake\ORM\Table))
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1228): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(Cake\ORM\Table))
+#6 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(931): Cake\ORM\Table->query()
+#7 /Applications/MAMP/htdocs/docshare/src/Controller/TagsController.php(26): Cake\ORM\Table->find('all', Array)
+#8 [internal function]: App\Controller\TagsController->view('3')
+#9 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#10 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#11 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#12 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#13 {main}
+
+
+2015-12-15 20:14:03 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'docshare.articles' doesn't exist
+Request URL: /docshare/users/posts
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'articles', Array, Object(Cake\Database\Schema\Table))
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(64): Cake\Database\Schema\Collection->describe('articles', Array)
+#2 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(423): Cake\Database\Schema\CachedCollection->describe('articles')
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(499): Cake\ORM\Table->schema()
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(334): Cake\ORM\Table->primaryKey()
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(311): Cake\ORM\Query->_addAssociationsToTypeMap(Object(App\Model\Table\UsersTable), Object(Cake\Database\TypeMap), Array)
+#6 /Applications/MAMP/htdocs/docshare/src/Controller/UsersController.php(27): Cake\ORM\Query->contain(Array)
+#7 [internal function]: App\Controller\UsersController->posts()
+#8 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#9 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#10 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#11 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-12-15 20:17:08 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'docshare.articles' doesn't exist
+Request URL: /docshare/users/posts
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'articles', Array, Object(Cake\Database\Schema\Table))
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(64): Cake\Database\Schema\Collection->describe('articles', Array)
+#2 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(423): Cake\Database\Schema\CachedCollection->describe('articles')
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(499): Cake\ORM\Table->schema()
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(334): Cake\ORM\Table->primaryKey()
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(311): Cake\ORM\Query->_addAssociationsToTypeMap(Object(App\Model\Table\UsersTable), Object(Cake\Database\TypeMap), Array)
+#6 /Applications/MAMP/htdocs/docshare/src/Controller/UsersController.php(27): Cake\ORM\Query->contain(Array)
+#7 [internal function]: App\Controller\UsersController->posts()
+#8 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#9 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#10 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#11 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-12-15 20:17:44 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'docshare.articles' doesn't exist
+Request URL: /docshare/users/posts
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'articles', Array, Object(Cake\Database\Schema\Table))
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(64): Cake\Database\Schema\Collection->describe('articles', Array)
+#2 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(423): Cake\Database\Schema\CachedCollection->describe('articles')
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(499): Cake\ORM\Table->schema()
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(334): Cake\ORM\Table->primaryKey()
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(311): Cake\ORM\Query->_addAssociationsToTypeMap(Object(App\Model\Table\UsersTable), Object(Cake\Database\TypeMap), Array)
+#6 /Applications/MAMP/htdocs/docshare/src/Controller/UsersController.php(27): Cake\ORM\Query->contain(Array)
+#7 [internal function]: App\Controller\UsersController->posts()
+#8 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#9 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#10 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#11 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-12-15 20:19:42 Error: [InvalidArgumentException] Users is not associated with Files
+Request URL: /docshare/users/posts
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(250): Cake\ORM\EagerLoader->_normalizeContain(Object(App\Model\Table\UsersTable), 'Files', Array, Array)
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(358): Cake\ORM\EagerLoader->normalized(Object(App\Model\Table\UsersTable))
+#2 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(337): Cake\ORM\EagerLoader->attachableAssociations(Object(App\Model\Table\UsersTable))
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(897): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(App\Model\Table\UsersTable), true)
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(853): Cake\ORM\Query->_transformQuery()
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(121): Cake\ORM\Query->sql()
+#6 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(872): Cake\Database\Query->execute()
+#10 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(823): Cake\ORM\Query->_all()
+#12 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(131): Cake\ORM\Query->all()
+#13 /Applications/MAMP/htdocs/docshare/src/Template/Users/posts.ctp(18): Cake\ORM\Query->getIterator()
+#14 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/View/View.php(971): include('/Applications/M...')
+#15 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/View/View.php(931): Cake\View\View->_evaluate('/Applications/M...', Array)
+#16 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/View/View.php(579): Cake\View\View->_render('/Applications/M...')
+#17 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#18 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#19 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#20 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-12-15 20:20:12 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Files.file_id' in 'where clause'
+Request URL: /docshare/users/posts
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(872): Cake\Database\Query->execute()
+#6 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(823): Cake\ORM\Query->_all()
+#8 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Association/ExternalAssociationTrait.php(112): Cake\ORM\Query->all()
+#9 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Association/SelectableAssociationTrait.php(56): Cake\ORM\Association\HasMany->_buildResultMap(Object(Cake\ORM\Query), Array)
+#10 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(566): Cake\ORM\Association\HasMany->eagerLoader(Array)
+#11 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(872): Cake\ORM\EagerLoader->loadExternal(Object(Cake\ORM\Query), Object(Cake\Database\Log\LoggingStatement))
+#12 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(272): Cake\ORM\Query->_execute()
+#13 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Query.php(823): Cake\ORM\Query->_all()
+#14 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(131): Cake\ORM\Query->all()
+#15 /Applications/MAMP/htdocs/docshare/src/Template/Users/posts.ctp(18): Cake\ORM\Query->getIterator()
+#16 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/View/View.php(971): include('/Applications/M...')
+#17 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/View/View.php(931): Cake\View\View->_evaluate('/Applications/M...', Array)
+#18 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/View/View.php(579): Cake\View\View->_render('/Applications/M...')
+#19 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#20 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#21 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#22 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#23 {main}
+
+
+2015-12-15 20:22:51 Error: Fatal Error (4): syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ']' in [/Applications/MAMP/htdocs/docshare/src/Template/Users/posts.ctp, line 26]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-15 20:22:51 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ']'
+Request URL: /docshare/users/posts
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Applications/M...', 26)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-15 20:23:25 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/MAMP/htdocs/docshare/src/Template/Files/view.ctp, line 4]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 140
+include - APP/Template/Files/view.ctp, line 4
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 971
+Cake\View\View::_render() - CORE/src/View/View.php, line 931
+Cake\View\View::render() - CORE/src/View/View.php, line 579
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 611
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-12-15 20:23:29 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/MAMP/htdocs/docshare/src/Template/Files/view.ctp, line 4]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 140
+include - APP/Template/Files/view.ctp, line 4
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 971
+Cake\View\View::_render() - CORE/src/View/View.php, line 931
+Cake\View\View::render() - CORE/src/View/View.php, line 579
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 611
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-12-15 20:27:05 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Articles could not be found.
+Exception Attributes: array (
+  'class' => 'Articles',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /docshare/articles/add
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-15 20:28:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Articles could not be found.
+Exception Attributes: array (
+  'class' => 'Articles',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /docshare/articles/add
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+

@@ -24,9 +24,9 @@ class UsersController extends AppController
 
 		$user=$this->request->session()->read('Auth.User');
 		if($user['role'] == 'admin'){
-        $users = $this->Users->find('all')->contain(['Articles']);
+        $users = $this->Users->find('all')->contain(['Files']);
 		}else{
-        $users = $this->Users->find('all', array('conditions' => array('id' => $user['id'])))->contain(['Articles']);
+        $users = $this->Users->find('all', array('conditions' => array('id' => $user['id'])))->contain(['Files']);
 		}
         $this->set(compact('users'));
     }
@@ -71,9 +71,26 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
+			$user->role = "user";
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
-                return $this->redirect(['action' => 'add']);
+                return $this->redirect(['action' => 'login']);
+            }
+            $this->Flash->error(__('Unable to add the user.'));
+        }
+        $this->set('user', $user);
+    }
+	
+	public function addadmin()
+    {
+        $user = $this->Users->newEntity();
+        if ($this->request->is('post')) {
+            $user = $this->Users->patchEntity($user, $this->request->data);
+			$user->role = "admin";
+
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('The user has been saved.'));
+                return $this->redirect(['action' => 'login']);
             }
             $this->Flash->error(__('Unable to add the user.'));
         }
