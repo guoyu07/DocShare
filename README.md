@@ -1,26 +1,21 @@
-# CakePHP Application Skeleton
+# DocShare - Content Uploading Website using CakePHP
 
-[![Build Status](https://api.travis-ci.org/cakephp/app.png)](https://travis-ci.org/cakephp/app)
-[![License](https://poser.pugx.org/cakephp/app/license.svg)](https://packagist.org/packages/cakephp/app)
-
-A skeleton for creating applications with [CakePHP](http://cakephp.org) 3.x.
+We have created online portal to let user upload differnt types of files to our server and share online using [CakePHP](http://cakephp.org) 3.x.
 
 The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
 
-## Installation
+## Use
 
-1. Download [Composer](http://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
+1. Download [Database](https://github.com/kheniparth/TechMuzz/blob/master/database.sql).
+2. Import `.sql` file to `phpmyadmin`.
+3. Two Users with `(username => password)`as `(admin => 1234)` and `(parth => 1234)` and few posts with comments and related tags are already will be created in database automatically (Database name must be: docshare).
+4. This project is hosted here on [DocShare](http://www.techmuzz.com/DocShare).
 
-If Composer is installed globally, run
-```bash
-composer create-project --prefer-dist cakephp/app [app_name]
-```
+## Developers
 
-You should now be able to visit the path to where you installed the app and see
-the setup traffic lights.
+1. Parth Kheni (7265085)
+2. Gajesh Solanki (7241623)
+3. Nuhman Paramban (7262595)
+4. Adarsh Avuku (7236235)
 
-## Configuration
-
-Read and edit `config/app.php` and setup the 'Datasources' and any other
-configuration relevant for your application.
+## Thank You !!!
