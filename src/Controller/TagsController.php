@@ -1,12 +1,24 @@
 <?php
 namespace App\Controller;
 use App\Controller\AppController;
+use App\Controller\Component;
 
 use Cake\ORM\TableRegistry;
 use Cake\I18n\Time;
+use Cake\Event\Event;
+use Cake\Utility\Text;
+use Cake\network\Exception\InternalErrorException;
 
 class TagsController extends AppController {
     
+	
+	public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow('all');
+    }
+	
+	
 	public function index()
     {
         $this->set('tags', $this->paginate($this->Tags));
@@ -22,14 +34,33 @@ class TagsController extends AppController {
      */
     public function view($id = null)
     {
-		$articlestagsTable = TableRegistry::get('ArticlesTags');
-        $articlesArray = $articlestagsTable->find('all', array('conditions' => array('tag_id' => $id)))->contain(['Articles']);
+		$filestagsTable = TableRegistry::get('FilesTags');
+        $filesArray = $filestagsTable->find('all', array('conditions' => array('tag_id' => $id)))->contain([
+			'Files' => function ($q) {
+								   return $q
+										->where(['Files.user_id' => $this->Auth->user('id')]);
+								}
+		]);
 		
 		
-		$this->set(compact('articlesArray'));
+		$this->set(compact('filesArray'));
+    }
+	
+	public function viewall($id = null)
+    {
+		$filestagsTable = TableRegistry::get('FilesTags');
+        $filesArray = $filestagsTable->find('all', array('conditions' => array('tag_id' => $id)))->contain([
+			'Files']);
+		
+		
+		$this->set(compact('filesArray'));
     }
 
-	
+	 public function all()
+    {
+		$this->set('tags', $this->paginate($this->Tags));
+        $this->set('_serialize', ['tags']);
+    }
     
     public function add()
     {
@@ -57,7 +88,7 @@ class TagsController extends AppController {
    public function deleteTag($id){
 		
 		$tag = $this->Tags->get($id, [
-			'contain' => 'Articles'
+			'contain' => 'Files'
 			]);
 //	   debug($tag);
 	   if ($this->Tags->delete($tag)) {

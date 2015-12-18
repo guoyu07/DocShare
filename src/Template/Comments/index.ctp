@@ -6,7 +6,7 @@
             <tr>
                 <th>Content</th>
                 <th>Date</th>
-				<th>Article Id</th>
+				<th>File Id</th>
                 <th>Author name</th>
                 <th>Author Email</th>
                 <th>Status</th>

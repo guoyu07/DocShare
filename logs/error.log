@@ -3504,3 +3504,543 @@ Stack Trace:
 #1 {main}
 
 
+2015-12-17 20:17:21 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'docshare.articles_tags' doesn't exist
+Request URL: /DocShare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'articles_tags', Array, Object(Cake\Database\Schema\Table))
+#1 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(64): Cake\Database\Schema\Collection->describe('articles_tags', Array)
+#2 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Table.php(423): Cake\Database\Schema\CachedCollection->describe('articles_tags')
+#3 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(173): Cake\ORM\Table->schema()
+#4 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(131): Cake\ORM\Query->addDefaultTypes(Object(Cake\ORM\Table))
+#5 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Table.php(1228): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(Cake\ORM\Table))
+#6 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Table.php(931): Cake\ORM\Table->query()
+#7 /Applications/MAMP/htdocs/DocShare/src/Controller/TagsController.php(26): Cake\ORM\Table->find('all', Array)
+#8 [internal function]: App\Controller\TagsController->view('1')
+#9 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#10 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#11 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#12 /Applications/MAMP/htdocs/DocShare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#13 {main}
+
+
+2015-12-17 20:19:36 Error: [InvalidArgumentException] FilesTags is not associated with Articles
+Request URL: /DocShare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(250): Cake\ORM\EagerLoader->_normalizeContain(Object(Cake\ORM\Table), 'Articles', Array, Array)
+#1 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(358): Cake\ORM\EagerLoader->normalized(Object(Cake\ORM\Table))
+#2 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(337): Cake\ORM\EagerLoader->attachableAssociations(Object(Cake\ORM\Table))
+#3 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(897): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(Cake\ORM\Table), true)
+#4 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(853): Cake\ORM\Query->_transformQuery()
+#5 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(121): Cake\ORM\Query->sql()
+#6 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(872): Cake\Database\Query->execute()
+#10 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(823): Cake\ORM\Query->_all()
+#12 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(131): Cake\ORM\Query->all()
+#13 /Applications/MAMP/htdocs/DocShare/src/Template/Tags/view.ctp(20): Cake\ORM\Query->getIterator()
+#14 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(971): include('/Applications/M...')
+#15 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(931): Cake\View\View->_evaluate('/Applications/M...', Array)
+#16 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(579): Cake\View\View->_render('/Applications/M...')
+#17 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#18 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#19 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#20 /Applications/MAMP/htdocs/DocShare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-12-17 20:20:00 Error: [InvalidArgumentException] FilesTags is not associated with Articles
+Request URL: /DocShare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(250): Cake\ORM\EagerLoader->_normalizeContain(Object(Cake\ORM\Table), 'Articles', Array, Array)
+#1 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(358): Cake\ORM\EagerLoader->normalized(Object(Cake\ORM\Table))
+#2 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(337): Cake\ORM\EagerLoader->attachableAssociations(Object(Cake\ORM\Table))
+#3 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(897): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(Cake\ORM\Table), true)
+#4 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(853): Cake\ORM\Query->_transformQuery()
+#5 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(121): Cake\ORM\Query->sql()
+#6 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(872): Cake\Database\Query->execute()
+#10 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(823): Cake\ORM\Query->_all()
+#12 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(131): Cake\ORM\Query->all()
+#13 /Applications/MAMP/htdocs/DocShare/src/Template/Tags/view.ctp(20): Cake\ORM\Query->getIterator()
+#14 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(971): include('/Applications/M...')
+#15 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(931): Cake\View\View->_evaluate('/Applications/M...', Array)
+#16 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(579): Cake\View\View->_render('/Applications/M...')
+#17 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#18 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#19 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#20 /Applications/MAMP/htdocs/DocShare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-12-17 20:20:04 Error: [InvalidArgumentException] FilesTags is not associated with Articles
+Request URL: /DocShare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(250): Cake\ORM\EagerLoader->_normalizeContain(Object(Cake\ORM\Table), 'Articles', Array, Array)
+#1 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(358): Cake\ORM\EagerLoader->normalized(Object(Cake\ORM\Table))
+#2 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(337): Cake\ORM\EagerLoader->attachableAssociations(Object(Cake\ORM\Table))
+#3 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(897): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(Cake\ORM\Table), true)
+#4 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(853): Cake\ORM\Query->_transformQuery()
+#5 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(121): Cake\ORM\Query->sql()
+#6 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(872): Cake\Database\Query->execute()
+#10 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(823): Cake\ORM\Query->_all()
+#12 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(131): Cake\ORM\Query->all()
+#13 /Applications/MAMP/htdocs/DocShare/src/Template/Tags/view.ctp(20): Cake\ORM\Query->getIterator()
+#14 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(971): include('/Applications/M...')
+#15 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(931): Cake\View\View->_evaluate('/Applications/M...', Array)
+#16 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(579): Cake\View\View->_render('/Applications/M...')
+#17 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#18 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#19 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#20 /Applications/MAMP/htdocs/DocShare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-12-17 20:20:28 Error: [InvalidArgumentException] FilesTags is not associated with Files
+Request URL: /DocShare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(250): Cake\ORM\EagerLoader->_normalizeContain(Object(Cake\ORM\Table), 'Files', Array, Array)
+#1 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(358): Cake\ORM\EagerLoader->normalized(Object(Cake\ORM\Table))
+#2 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(337): Cake\ORM\EagerLoader->attachableAssociations(Object(Cake\ORM\Table))
+#3 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(897): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(Cake\ORM\Table), true)
+#4 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(853): Cake\ORM\Query->_transformQuery()
+#5 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(121): Cake\ORM\Query->sql()
+#6 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(872): Cake\Database\Query->execute()
+#10 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(823): Cake\ORM\Query->_all()
+#12 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(131): Cake\ORM\Query->all()
+#13 /Applications/MAMP/htdocs/DocShare/src/Template/Tags/view.ctp(20): Cake\ORM\Query->getIterator()
+#14 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(971): include('/Applications/M...')
+#15 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(931): Cake\View\View->_evaluate('/Applications/M...', Array)
+#16 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(579): Cake\View\View->_render('/Applications/M...')
+#17 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#18 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#19 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#20 /Applications/MAMP/htdocs/DocShare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-12-17 20:20:54 Error: [InvalidArgumentException] FilesTags is not associated with Files
+Request URL: /DocShare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(250): Cake\ORM\EagerLoader->_normalizeContain(Object(Cake\ORM\Table), 'Files', Array, Array)
+#1 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(358): Cake\ORM\EagerLoader->normalized(Object(Cake\ORM\Table))
+#2 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(337): Cake\ORM\EagerLoader->attachableAssociations(Object(Cake\ORM\Table))
+#3 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(897): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(Cake\ORM\Table), true)
+#4 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(853): Cake\ORM\Query->_transformQuery()
+#5 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(121): Cake\ORM\Query->sql()
+#6 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(872): Cake\Database\Query->execute()
+#10 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(823): Cake\ORM\Query->_all()
+#12 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(131): Cake\ORM\Query->all()
+#13 /Applications/MAMP/htdocs/DocShare/src/Template/Tags/view.ctp(20): Cake\ORM\Query->getIterator()
+#14 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(971): include('/Applications/M...')
+#15 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(931): Cake\View\View->_evaluate('/Applications/M...', Array)
+#16 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(579): Cake\View\View->_render('/Applications/M...')
+#17 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#18 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#19 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#20 /Applications/MAMP/htdocs/DocShare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-12-17 20:21:14 Error: [InvalidArgumentException] FilesTags is not associated with Files
+Request URL: /DocShare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(250): Cake\ORM\EagerLoader->_normalizeContain(Object(Cake\ORM\Table), 'Files', Array, Array)
+#1 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(358): Cake\ORM\EagerLoader->normalized(Object(Cake\ORM\Table))
+#2 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(337): Cake\ORM\EagerLoader->attachableAssociations(Object(Cake\ORM\Table))
+#3 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(897): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(Cake\ORM\Table), true)
+#4 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(853): Cake\ORM\Query->_transformQuery()
+#5 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(121): Cake\ORM\Query->sql()
+#6 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(872): Cake\Database\Query->execute()
+#10 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(823): Cake\ORM\Query->_all()
+#12 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(131): Cake\ORM\Query->all()
+#13 /Applications/MAMP/htdocs/DocShare/src/Template/Tags/view.ctp(20): Cake\ORM\Query->getIterator()
+#14 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(971): include('/Applications/M...')
+#15 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(931): Cake\View\View->_evaluate('/Applications/M...', Array)
+#16 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(579): Cake\View\View->_render('/Applications/M...')
+#17 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#18 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#19 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#20 /Applications/MAMP/htdocs/DocShare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-12-17 20:22:30 Error: [InvalidArgumentException] FilesTags is not associated with Files
+Request URL: /DocShare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(250): Cake\ORM\EagerLoader->_normalizeContain(Object(Cake\ORM\Table), 'Files', Array, Array)
+#1 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(358): Cake\ORM\EagerLoader->normalized(Object(Cake\ORM\Table))
+#2 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(337): Cake\ORM\EagerLoader->attachableAssociations(Object(Cake\ORM\Table))
+#3 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(897): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(Cake\ORM\Table), true)
+#4 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(853): Cake\ORM\Query->_transformQuery()
+#5 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(121): Cake\ORM\Query->sql()
+#6 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(872): Cake\Database\Query->execute()
+#10 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(823): Cake\ORM\Query->_all()
+#12 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(131): Cake\ORM\Query->all()
+#13 /Applications/MAMP/htdocs/DocShare/src/Template/Tags/view.ctp(20): Cake\ORM\Query->getIterator()
+#14 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(971): include('/Applications/M...')
+#15 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(931): Cake\View\View->_evaluate('/Applications/M...', Array)
+#16 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(579): Cake\View\View->_render('/Applications/M...')
+#17 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#18 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#19 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#20 /Applications/MAMP/htdocs/DocShare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-12-17 20:22:31 Error: [InvalidArgumentException] FilesTags is not associated with Files
+Request URL: /DocShare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(250): Cake\ORM\EagerLoader->_normalizeContain(Object(Cake\ORM\Table), 'Files', Array, Array)
+#1 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(358): Cake\ORM\EagerLoader->normalized(Object(Cake\ORM\Table))
+#2 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(337): Cake\ORM\EagerLoader->attachableAssociations(Object(Cake\ORM\Table))
+#3 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(897): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(Cake\ORM\Table), true)
+#4 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(853): Cake\ORM\Query->_transformQuery()
+#5 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(121): Cake\ORM\Query->sql()
+#6 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(872): Cake\Database\Query->execute()
+#10 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(823): Cake\ORM\Query->_all()
+#12 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(131): Cake\ORM\Query->all()
+#13 /Applications/MAMP/htdocs/DocShare/src/Template/Tags/view.ctp(20): Cake\ORM\Query->getIterator()
+#14 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(971): include('/Applications/M...')
+#15 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(931): Cake\View\View->_evaluate('/Applications/M...', Array)
+#16 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(579): Cake\View\View->_render('/Applications/M...')
+#17 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#18 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#19 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#20 /Applications/MAMP/htdocs/DocShare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-12-17 20:22:31 Error: [InvalidArgumentException] FilesTags is not associated with Files
+Request URL: /DocShare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(250): Cake\ORM\EagerLoader->_normalizeContain(Object(Cake\ORM\Table), 'Files', Array, Array)
+#1 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(358): Cake\ORM\EagerLoader->normalized(Object(Cake\ORM\Table))
+#2 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(337): Cake\ORM\EagerLoader->attachableAssociations(Object(Cake\ORM\Table))
+#3 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(897): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(Cake\ORM\Table), true)
+#4 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(853): Cake\ORM\Query->_transformQuery()
+#5 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(121): Cake\ORM\Query->sql()
+#6 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(872): Cake\Database\Query->execute()
+#10 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(823): Cake\ORM\Query->_all()
+#12 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(131): Cake\ORM\Query->all()
+#13 /Applications/MAMP/htdocs/DocShare/src/Template/Tags/view.ctp(20): Cake\ORM\Query->getIterator()
+#14 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(971): include('/Applications/M...')
+#15 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(931): Cake\View\View->_evaluate('/Applications/M...', Array)
+#16 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(579): Cake\View\View->_render('/Applications/M...')
+#17 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#18 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#19 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#20 /Applications/MAMP/htdocs/DocShare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-12-17 20:22:31 Error: [InvalidArgumentException] FilesTags is not associated with Files
+Request URL: /DocShare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(250): Cake\ORM\EagerLoader->_normalizeContain(Object(Cake\ORM\Table), 'Files', Array, Array)
+#1 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(358): Cake\ORM\EagerLoader->normalized(Object(Cake\ORM\Table))
+#2 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(337): Cake\ORM\EagerLoader->attachableAssociations(Object(Cake\ORM\Table))
+#3 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(897): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(Cake\ORM\Table), true)
+#4 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(853): Cake\ORM\Query->_transformQuery()
+#5 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(121): Cake\ORM\Query->sql()
+#6 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(872): Cake\Database\Query->execute()
+#10 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(823): Cake\ORM\Query->_all()
+#12 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(131): Cake\ORM\Query->all()
+#13 /Applications/MAMP/htdocs/DocShare/src/Template/Tags/view.ctp(20): Cake\ORM\Query->getIterator()
+#14 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(971): include('/Applications/M...')
+#15 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(931): Cake\View\View->_evaluate('/Applications/M...', Array)
+#16 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(579): Cake\View\View->_render('/Applications/M...')
+#17 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#18 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#19 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#20 /Applications/MAMP/htdocs/DocShare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-12-17 20:22:31 Error: [InvalidArgumentException] FilesTags is not associated with Files
+Request URL: /DocShare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(250): Cake\ORM\EagerLoader->_normalizeContain(Object(Cake\ORM\Table), 'Files', Array, Array)
+#1 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(358): Cake\ORM\EagerLoader->normalized(Object(Cake\ORM\Table))
+#2 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(337): Cake\ORM\EagerLoader->attachableAssociations(Object(Cake\ORM\Table))
+#3 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(897): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(Cake\ORM\Table), true)
+#4 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(853): Cake\ORM\Query->_transformQuery()
+#5 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(121): Cake\ORM\Query->sql()
+#6 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(872): Cake\Database\Query->execute()
+#10 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(823): Cake\ORM\Query->_all()
+#12 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(131): Cake\ORM\Query->all()
+#13 /Applications/MAMP/htdocs/DocShare/src/Template/Tags/view.ctp(20): Cake\ORM\Query->getIterator()
+#14 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(971): include('/Applications/M...')
+#15 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(931): Cake\View\View->_evaluate('/Applications/M...', Array)
+#16 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(579): Cake\View\View->_render('/Applications/M...')
+#17 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#18 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#19 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#20 /Applications/MAMP/htdocs/DocShare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-12-17 20:22:36 Error: [InvalidArgumentException] FilesTags is not associated with Files
+Request URL: /DocShare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(250): Cake\ORM\EagerLoader->_normalizeContain(Object(Cake\ORM\Table), 'Files', Array, Array)
+#1 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(358): Cake\ORM\EagerLoader->normalized(Object(Cake\ORM\Table))
+#2 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(337): Cake\ORM\EagerLoader->attachableAssociations(Object(Cake\ORM\Table))
+#3 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(897): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(Cake\ORM\Table), true)
+#4 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(853): Cake\ORM\Query->_transformQuery()
+#5 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(121): Cake\ORM\Query->sql()
+#6 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(872): Cake\Database\Query->execute()
+#10 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/ORM/Query.php(823): Cake\ORM\Query->_all()
+#12 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(131): Cake\ORM\Query->all()
+#13 /Applications/MAMP/htdocs/DocShare/src/Template/Tags/view.ctp(20): Cake\ORM\Query->getIterator()
+#14 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(971): include('/Applications/M...')
+#15 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(931): Cake\View\View->_evaluate('/Applications/M...', Array)
+#16 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/View/View.php(579): Cake\View\View->_render('/Applications/M...')
+#17 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#18 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#19 /Applications/MAMP/htdocs/DocShare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#20 /Applications/MAMP/htdocs/DocShare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-12-17 20:27:13 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/MAMP/htdocs/DocShare/src/Template/Files/view.ctp, line 4]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 140
+include - APP/Template/Files/view.ctp, line 4
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 971
+Cake\View\View::_render() - CORE/src/View/View.php, line 931
+Cake\View\View::render() - CORE/src/View/View.php, line 579
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 611
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-12-17 20:50:45 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/MAMP/htdocs/DocShare/src/Template/Files/view.ctp, line 4]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 140
+include - APP/Template/Files/view.ctp, line 4
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 971
+Cake\View\View::_render() - CORE/src/View/View.php, line 931
+Cake\View\View::render() - CORE/src/View/View.php, line 579
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 611
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-12-18 00:22:25 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "files_tags"
+Request URL: /docshare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Applications/MAMP/htdocs/docshare/src/Controller/TagsController.php(26): Cake\ORM\Table->get('1', Array)
+#2 [internal function]: App\Controller\TagsController->view('1')
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#6 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-12-18 00:23:53 Error: Fatal Error (4): syntax error, unexpected '?>' in [/Applications/MAMP/htdocs/docshare/src/Template/Tags/view.ctp, line 18]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-18 00:23:54 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '?>'
+Request URL: /docshare/tags/view/3
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Applications/M...', 18)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-18 00:31:50 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "files_tags"
+Request URL: /docshare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Applications/MAMP/htdocs/docshare/src/Controller/TagsController.php(26): Cake\ORM\Table->get('1', Array)
+#2 [internal function]: App\Controller\TagsController->view('1')
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#6 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-12-18 00:49:06 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "files_tags"
+Request URL: /docshare/tags/view/1
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Applications/MAMP/htdocs/docshare/src/Controller/TagsController.php(26): Cake\ORM\Table->get('1', Array)
+#2 [internal function]: App\Controller\TagsController->view('1')
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#4 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#6 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-12-18 01:34:51 Error: [Cake\Controller\Exception\MissingActionException] Action TagsController::all() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TagsController',
+  'action' => 'all',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /docshare/tags/all
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#2 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-12-18 01:39:14 Error: [Cake\Controller\Exception\MissingActionException] Action TagsController::all() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TagsController',
+  'action' => 'all',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /docshare/tags/all
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#2 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-12-18 02:14:00 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/MAMP/htdocs/docshare/src/Template/Files/edit.ctp, line 25]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 140
+include - APP/Template/Files/edit.ctp, line 25
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 971
+Cake\View\View::_render() - CORE/src/View/View.php, line 931
+Cake\View\View::render() - CORE/src/View/View.php, line 579
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 611
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-12-18 02:14:48 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/MAMP/htdocs/docshare/src/Template/Files/edit.ctp, line 25]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 140
+include - APP/Template/Files/edit.ctp, line 25
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 971
+Cake\View\View::_render() - CORE/src/View/View.php, line 931
+Cake\View\View::render() - CORE/src/View/View.php, line 579
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 611
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-12-18 03:52:55 Error: [Cake\View\Exception\MissingTemplateException] Template file "Tags/viewall.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Tags/viewall.ctp',
+)
+Request URL: /docshare/tags/viewall/2
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/View/View.php(576): Cake\View\View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#4 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 {main}
+
+
+2015-12-18 03:53:08 Error: [Cake\View\Exception\MissingTemplateException] Template file "Tags/viewall.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Tags/viewall.ctp',
+)
+Request URL: /docshare/tags/viewall/2
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/View/View.php(576): Cake\View\View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#4 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 {main}
+
+
+2015-12-18 03:54:59 Error: [Cake\View\Exception\MissingTemplateException] Template file "Tags/viewall.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Tags/viewall.ctp',
+)
+Request URL: /docshare/tags/viewall/3
+Stack Trace:
+#0 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/View/View.php(576): Cake\View\View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#3 /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#4 /Applications/MAMP/htdocs/docshare/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 {main}
+
+
+2015-12-18 07:02:45 Warning: Warning (4096): Argument 1 passed to App\Controller\TagsController::beforeFilter() must be an instance of App\Controller\Event, instance of Cake\Event\Event given, called in /Applications/MAMP/htdocs/docshare/vendor/cakephp/cakephp/src/Event/EventManager.php on line 385 and defined in [/Applications/MAMP/htdocs/docshare/src/Controller/TagsController.php, line 11]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 140
+App\Controller\TagsController::beforeFilter() - APP/Controller/TagsController.php, line 11
+Cake\Event\EventManager::_callListener() - CORE/src/Event/EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE/src/Event/EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE/src/Event/EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE/src/Controller/Controller.php, line 491
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+

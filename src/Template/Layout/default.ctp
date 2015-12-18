@@ -47,6 +47,11 @@ $cakeDescription = 'DocShare';
 							<?= $this->Html->link('Add Admin', ['controller' => 'Users', 'action' => 'addadmin']) ?>
 
 						</div>
+					<? }else if($this->request->controller == "Tags" && $this->request->action == "index"){ ?>
+						<div class="customLink col-sm-1">
+							<?= $this->Html->link('Add Tag', ['controller' => 'Tags', 'action' => 'add']) ?>
+
+						</div>
 					<? }else { ?>
 						<div class="customLink col-sm-1">
 							<?= $this->Html->link('Add File', ['controller' => 'Files', 'action' => 'add']) ?>
@@ -66,13 +71,14 @@ $cakeDescription = 'DocShare';
 								<div class="users col-sm-1">
 									<?= $this->Html->link('Users', ['controller' => 'users', 'action' => 'all']) ?>
 								</div>
-								<div class="comments col-sm-1">
-									<?= $this->Html->link('Comments', ['controller' => 'Comments', 'action' => 'index']) ?>
-								</div>
-								<div class="tags col-sm-1">
-									<?= $this->Html->link('Tags', ['controller' => 'Tags','action' => 'index']) ?>
-								</div>	
+						
+							<div class="comments col-sm-1">
+								<?= $this->Html->link('Comments', ['controller' => 'Comments', 'action' => 'index']) ?>
+							</div>
 						<?php } ?>
+						<div class="tags col-sm-1">
+							<?= $this->Html->link('Tags', ['controller' => 'Tags','action' => 'index']) ?>
+						</div>	
 						<div class="logout col-sm-1">
 							<?= $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout']) ?>
 						</div>
@@ -85,6 +91,9 @@ $cakeDescription = 'DocShare';
 
 						</div>
 				<?	} ?>
+						<div class="tags col-sm-1">
+							<?= $this->Html->link('All Tags', ['controller' => 'Tags','action' => 'all']) ?>
+						</div>	
 			</div>
 		</div>
 		

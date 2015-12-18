@@ -2,7 +2,7 @@
 	<div class="container-fluid"> 
 		
 		<div class="row" >
-        <h1>Edit Article</h1>
+        <h1>Edit File</h1>
             <?php
                 echo $this->Form->create($file);
                 echo $this->Form->label('title:');
@@ -21,6 +21,15 @@
 									'label' => 'Allow Comments'));
 
 
+				$options = [];
+				foreach($tags as $tag){
+					$options[$tag->id] = $tag->value;
+				}
+				echo $this->Form->input('tags._ids',[
+					'multiple' => 'checkbox',
+					'options' => $options,
+					'type'=>'select'
+					]);
 					
 				echo $this->Form->button(__('Save Article'));
                 echo $this->Form->end();

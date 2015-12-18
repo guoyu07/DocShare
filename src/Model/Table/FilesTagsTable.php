@@ -1,11 +1,10 @@
 <?php
 
-// src/Model/Table/ArticlesTable.php
 
 namespace App\Model\Table;
 use Cake\ORM\Table;
 
-class ArticlesTagsTable extends Table
+class FilesTagsTable extends Table
 {
 	
 
@@ -14,8 +13,8 @@ class ArticlesTagsTable extends Table
 		
         $this->addBehavior('Timestamp');
 
-        $this->belongsTo('Articles', [
-            'foreignKey' => 'article_id',
+        $this->belongsTo('Files', [
+            'foreignKey' => 'file_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Tags', [

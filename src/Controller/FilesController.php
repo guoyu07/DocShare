@@ -157,6 +157,10 @@ class FilesController extends AppController
 
     public function edit($id){
 		
+		$tagsTable = TableRegistry::get('Tags');
+			$tags = $tagsTable->find('all');
+			$this->set(compact('tags'));
+		
 		
 			$filesTable = TableRegistry::get('Files');
             $file = $filesTable->get($id, ['contain' => 'Tags']);
@@ -177,10 +181,20 @@ class FilesController extends AppController
 	public function add(){
 		
 			$now = Time::now();
+			$tagsTable = TableRegistry::get('Tags');
+			$tags = $tagsTable->find('all');
+			$this->set(compact('tags'));
+		
+		
 			$file = $this->Files->newEntity();
         if ($this->request->is('post')) {
             $tempFile = $this->request->data;
-            $file = $this->Files->patchEntity($file, $this->request->data);
+            $file = $this->Files->patchEntity($file, $this->request->data,[
+				'associated' => [
+					'Tags'
+				]
+				
+				]);
 			
 			$file->user_id = $this->Auth->user('id');
 			$file->date = $now;
@@ -190,7 +204,7 @@ class FilesController extends AppController
 				$filename = $file["upfile"]['name'];
 				$file_tmp_name = $file["upfile"]['tmp_name'];
 				$dir = WWW_ROOT.'uploads';
-				$allowed = array('png', 'jpg', 'jpeg');
+				$allowed = array('png', 'jpg', 'jpeg','doc','txt','pdf','mp4','swf','sql','rpt');
 
 				if(!in_array(substr(strrchr($filename , '.'), 1), $allowed)){
 					throw new InternalErrorException("Error processing request.", 1);

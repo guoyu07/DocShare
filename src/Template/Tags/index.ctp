@@ -7,7 +7,7 @@
             <tr>
                 <th>Value</th>
                 <th>slug</th>
-				<th>Articles</th>
+				<th>Files</th>
 				<th>Delete</th>
             </tr>
 
