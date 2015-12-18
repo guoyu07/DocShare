@@ -9,7 +9,7 @@ The framework source code can be found here: [cakephp/cakephp](https://github.co
 1. Download [Database](https://github.com/kheniparth/TechMuzz/blob/master/database.sql).
 2. Import `.sql` file to `phpmyadmin`.
 3. Two Users with `(username => password)`as `(admin => 1234)` and `(parth => 1234)` and few posts with comments and related tags are already will be created in database automatically (Database name must be: docshare).
-4. This project is hosted here on [DocShare](http://www.techmuzz.com/DocShare).
+4. This project is hosted here on [DocShare](http://www.shareudocs.com/).
 
 ## Developers
 
